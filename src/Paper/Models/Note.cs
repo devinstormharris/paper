@@ -1,4 +1,4 @@
-﻿namespace Paper;
+﻿namespace Paper.Models;
 
 public class Note
 {

@@ -1,5 +1,41 @@
 ﻿@page "/"
+@using System.IO.Enumeration
 
 <PageTitle>Notes</PageTitle>
 
-<h1>Notes</h1>
+<div class="container">
+    <RadzenCard>
+        <div class="row mt-2">
+            <div class="col">
+                <h4 class="mb-4">Create a note</h4>
+                <RadzenTextBox Placeholder="Enter a title..." Change=@(args => OnSubmit(args)) Class="w-25"/>
+                <br/>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <RadzenTextArea Placeholder="Enter a note..."Class="w-100 p-3"/>
+                <RadzenButton Click=@(args => OnClick()) Text="Save" ButtonStyle="ButtonStyle.Primary" />
+            </div>
+        </div>
+    </RadzenCard>
+</div>
+
+@code {
+    bool busy;
+
+    void OnSubmit(string buttonName)
+    {
+        busy = true;
+        Task.Delay(2000);
+        busy = false;
+    }
+
+    async Task OnClick()
+    {
+        busy = true;
+        await Task.Delay(2000);
+        busy = false;
+    }
+
+}
