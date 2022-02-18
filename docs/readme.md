@@ -10,6 +10,8 @@ Second, you will change to the indicated directory.
 
 ```cd paper/src/Paper.Web```
 
-Finally, you will start the project.
+Then you will start the project.
 
 ```dotnet run```
+
+Finally, you will navigate to the link given to you.
